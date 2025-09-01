@@ -28,7 +28,7 @@ export default function NotFound() {
           <Button variant="outline" asChild className="w-full">
             <Link href="/cars">
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Browse Cars
+              Browse Services
             </Link>
           </Button>
         </div>

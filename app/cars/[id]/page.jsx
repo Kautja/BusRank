@@ -1,5 +1,5 @@
 import { getCars } from '@/lib/api';
-import CarDetailPage from './CarDetailPage';
+
 
 export async function generateStaticParams() {
     const cars = await getCars();
