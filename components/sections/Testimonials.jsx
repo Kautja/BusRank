@@ -17,7 +17,7 @@ const Testimonials = () => {
             avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150',
             rating: 5,
             content:
-                'Absolutely fantastic service! The BMW X5 I rented was in perfect condition and the booking process was seamless. The staff was professional and accommodating. Will definitely use RentCar again for my business trips.',
+                'Absolutely fantastic service! The BMW X5 I rented was in perfect condition and the booking process was seamless. The staff was professional and accommodating. Will definitely use the BusRank app again for my business trips.',
         },
         {
             id: 2,
@@ -87,7 +87,7 @@ const Testimonials = () => {
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                         Don't just take our word for it. Here's what our
                         satisfied customers have to say about their experience
-                        with RentCar.
+                        with BusRank.
                     </p>
                 </motion.div>
 

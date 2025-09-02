@@ -53,12 +53,15 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-gray-400 text-sm">
-              Your trusted partner for premium car travel. Experience the freedom of the road with our extensive fleet of well-maintained vehicles.
+            Your trusted partner in mobility and instant delivery, serving multiple countries worldwide, prioritizing your travel, deliveries and user earnings.
             </p>
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm text-gray-400">
                 <MapPin className="w-4 h-4 text-red-500" />
-                <span>Plot 23041. Phase 4 Gaborone Botswana</span>
+                <span>Plot 70665
+Block 10
+Gaborone
+Botswana</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-400">
                 <Phone className="w-4 h-4 text-red-500" />
@@ -66,7 +69,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-400">
                 <Mail className="w-4 h-4 text-red-500" />
-                <span>support@busrank.com</span>
+                <span>support@busrank.app</span>
               </div>
             </div>
           </div>

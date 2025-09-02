@@ -207,23 +207,16 @@ const AboutPage = () => {
                                     A Vision Born from Experience
                                 </h3>
                                 <p className="text-gray-600 leading-relaxed">
-                                    Founded in 2025, BusRank began with a simple
-                                    mission: to make bus tracking accessible,
-                                    transparent, and reliable for everyone. Our
-                                    founder experienced the frustrations of
-                                    traditional tracking services firsthand.
+                                    Developed under Dumba Motor Group’s 2023 digital expansion, BusRank is positioned as Africa’s largest mobility and instant delivery startup. It allows users to book taxis, buses, rentals, shared rides, and deliveries in one seamless experience.
                                 </p>
                                 <p className="text-gray-600 leading-relaxed">
-                                    What started as a small fleet tracking system
-                                    has grown into one of the most trusted
-                                    platforms, serving thousands of users across
-                                    multiple cities.
+                                Inspired by Botswana’s cultural term “bus rank” (public transport hub), the app becomes a virtual hub at your fingertips. Available on Android and iOS, it integrates with Dumba’s car rental fleet, offering real-time booking, instant delivery, and commuter-focused servicesmaking travel across Africa faster, safer, and smarter.
                                 </p>
                             </div>
 
                             <div className="grid grid-cols-2 gap-4">
                                 {[
-                                    { label: 'Founded', value: '2025' },
+                                    { label: 'Founded', value: '2023' },
                                     { label: 'First City', value: 'Gaborone' },
                                     { label: 'First Fleet', value: '10 Buses' },
                                     { label: 'Today', value: '500+ Buses' },
@@ -267,7 +260,7 @@ const AboutPage = () => {
                                     </div>
                                     <div className="absolute -bottom-4 -right-4 bg-white rounded-lg p-4 shadow-lg">
                                         <div className="text-2xl font-bold text-red-500">
-                                            1+
+                                            2+
                                         </div>
                                         <div className="text-sm text-gray-600">
                                             Years of Excellence
@@ -279,6 +272,131 @@ const AboutPage = () => {
                     </div>
                 </div>
             </section>
+{/* Story Section Founder */}
+<section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Section Title */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="text-center mb-16"
+    >
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Meet the Founder
+      </h2>
+      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        From a simple idea to a revolutionary mobility platform that’s changing
+        how Africa moves.
+      </p>
+    </motion.div>
+
+    {/* Grid layout */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      {/* Founder Bio */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        className="space-y-8"
+      >
+        <div className="space-y-4">
+          <div className="flex items-center gap-6">
+            {/* Founder Photo (moved up next to name) */}
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.7 }}
+              className="relative w-28 h-28 rounded-full overflow-hidden shadow-lg ring-4 ring-red-500/30"
+            >
+              <img
+                src="/images/founder.jpeg"
+                alt="Founder - Solly KM Nthomang"
+                className="object-cover w-full h-full"
+              />
+            </motion.div>
+
+            {/* Name */}
+            <h3 className="text-2xl font-bold text-gray-900">
+              Solly KM Nthomang
+            </h3>
+          </div>
+
+          {/* Journey */}
+          <div className="bg-gray-50 p-6 rounded-xl shadow-sm space-y-4">
+            <p className="text-gray-600 leading-relaxed">
+              <span className="font-semibold">Solly KM Nthomang</span> (also
+              known as Solly Kala Maduo Nthomang or Solly KM Cannon) is a
+              Botswana-based entrepreneur and the founder & Group CEO of{" "}
+              <span className="font-semibold">Dumba Motor Group (Pty) Ltd</span>.
+              Operating from Gaborone, he is recognized for transforming the
+              transportation sector in Botswana.
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              In September 2020, he identified a gap in affordable and reliable
+              vehicle rental services. This led to the birth of Dumba, a
+              family-owned business built on exceptional customer service and
+              accessibility. Under his leadership, Dumba has grown into the{" "}
+              <span className="font-semibold">
+                largest independent car rental firm in Botswana
+              </span>{" "}
+              while also expanding into ride-sharing and mobility services.
+            </p>
+          </div>
+
+          {/* Recognition */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="bg-gray-50 p-6 rounded-xl shadow-sm space-y-4"
+          >
+            <p className="text-gray-600 leading-relaxed">
+              Nthomang’s entrepreneurial journey has been featured in
+              interviews, where he highlights challenges like bootstrapping and
+              navigating Africa’s competitive car rental landscape.
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              His impact is recognized through{" "}
+              <span className="font-semibold">FOYA nominations</span> (2023 &
+              2024) under the “Founder of the Year Over 30” category, and{" "}
+              <span className="font-semibold">awards from the U.S. Embassy</span>{" "}
+              for excellence in service. In 2025, he continues to lead innovation
+              by integrating app-based mobility solutions across Africa.
+            </p>
+          </motion.div>
+
+          {/* BusRank App */}
+          
+        </div>
+      </motion.div>
+
+      {/* Full-size Founder Image (secondary visual, optional) */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        className="relative hidden lg:block"
+      >
+        <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-2 shadow-xl">
+          <img
+            src="/images/founder.jpeg"
+            alt="Founder - Solly KM Nthomang"
+            className="rounded-2xl w-full h-[32rem] object-cover"
+          />
+          {/* Floating Badge */}
+          <div className="absolute -bottom-6 -right-6 bg-white rounded-xl p-4 shadow-lg text-center">
+            <div className="text-2xl font-bold text-red-600">5+</div>
+            <div className="text-sm text-gray-600">
+              Years Leading Innovation
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</section>
+
 
             {/* Values Section */}
             <section className="py-20 bg-gray-50">

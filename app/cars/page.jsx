@@ -176,7 +176,7 @@ const AboutPage = () => {
                         </h1>
                         <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
                             We’re not just a booking app. We’re building the world´s most trusted 
-                            network for buses, cabs, car rentals, and parcel deliveries, 
+                            network for buses, cabs, car rentals, and parcel deliveries, Patnership program
                             all in one platform.
                         </p>
                     </motion.div>
