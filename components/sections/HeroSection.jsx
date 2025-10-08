@@ -1,4 +1,3 @@
-//components/sections/HeroSection.jsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -10,7 +9,7 @@ const HeroSection = () => {
 
     // -------- COUNTDOWN to Launch Day --------
     const calculateTimeLeft = () => {
-        const targetDate = new Date("2025-09-30T23:59:59"); // Launch Date
+        const targetDate = new Date("2025-10-10T23:59:59"); // Launch Date updated
         const diff = +targetDate - +new Date();
         let t = {};
         if (diff > 0) {
@@ -43,7 +42,6 @@ const HeroSection = () => {
     // -------- HANDLE WAITLIST --------
     const handleWaitlist = (e) => {
         e.preventDefault();
-        // Redirect to contact page with email param
         router.push(`/contact?email=${encodeURIComponent(email)}`);
     };
 
@@ -55,7 +53,7 @@ const HeroSection = () => {
         if (input.toLowerCase().includes('price')) {
             reply = "💰 Prices will drop soon — starting from AED 89/day. Stay tuned.";
         } else if (input.toLowerCase().includes('launch')) {
-            reply = "🚀 We're going live on **30 September 2025**. Get ready!";
+            reply = "🚀 We're going live on **10 October 2025**. Get ready!";
         } else if (input.toLowerCase().includes('waitlist')) {
             reply = "✍️ Just enter your email above, and you’re in!";
         }
@@ -87,7 +85,7 @@ const HeroSection = () => {
                 {/* Countdown */}
                 <div className="mt-10 bg-gradient-to-r from-red-600 to-red-500 text-white rounded-2xl p-8 shadow-xl max-w-3xl mx-auto">
                     <h2 className="text-3xl font-bold mb-2">⏳ Launching Soon</h2>
-                    <p className="text-lg mb-6">Mark your calendars: <b>30 September 2025</b></p>
+                    <p className="text-lg mb-6">Mark your calendars: <b>10 October 2025</b></p>
                     <div className="flex justify-center gap-4 mb-6">
                         {['days', 'hours', 'minutes', 'seconds'].map((unit) => (
                             <div key={unit} className="flex flex-col items-center">
