@@ -110,19 +110,19 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-10 md:mt-0"
         >
           <img
-            src="/images/onboarding1.png"
+            src="/images/Onboarding1.png"
             alt="Onboarding Screen 1"
             className="w-48 md:w-56 rounded-2xl shadow-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
             style={{ aspectRatio: '9/19.5', objectFit: 'cover' }}
           />
           <img
-            src="/images/onboarding2.png"
+            src="/images/Onboarding2.png"
             alt="Onboarding Screen 2"
             className="w-48 md:w-56 rounded-2xl shadow-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
             style={{ aspectRatio: '9/19.5', objectFit: 'cover' }}
           />
           <img
-            src="/images/onboarding3.png"
+            src="/images/Onboarding3.png"
             alt="Onboarding Screen 3"
             className="w-48 md:w-56 rounded-2xl shadow-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
             style={{ aspectRatio: '9/19.5', objectFit: 'cover' }}
