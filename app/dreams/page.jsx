@@ -4,59 +4,16 @@ import { useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import {
   Rocket,
-  Users,
   Wallet,
-  Heart,
-  Globe,
-  Zap,
-  Star,
   ArrowRight,
   Play,
+  Upload,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const DreamsArchitecture = () => {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
-
-  const stats = [
-    { label: 'Dream Builders', value: '10,000+', icon: Users },
-    { label: 'Rewards Paid Out', value: 'P1M+', icon: Wallet },
-    { label: 'Active Partners', value: '2,500+', icon: Globe },
-    { label: 'Cities Connected', value: '20+', icon: Rocket },
-  ];
-
-  const values = [
-    {
-      icon: Heart,
-      title: 'Community First',
-      description:
-        'We believe in collective growth. The Earn & Share program turns your support into tangible rewards.',
-      color: 'from-red-900 via-red-800 to-red-600',
-    },
-    {
-      icon: Wallet,
-      title: 'Empowered Earnings',
-      description:
-        'Invite, share, and earn. Every referral helps power Africa’s next mobility revolution.',
-      color: 'from-yellow-400 to-orange-500',
-    },
-    {
-      icon: Zap,
-      title: 'Innovation Meets Impact',
-      description:
-        'BusRank rewards the people who fuel the movement — not just investors, but everyday dreamers.',
-      color: 'from-red-900 via-red-800 to-red-600',
-    },
-    {
-      icon: Star,
-      title: 'Dream Driven',
-      description:
-        'Your dreams shape the architecture of our future. Together, we’re designing new realities.',
-      color: 'from-yellow-400 to-orange-500',
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-black text-white">
@@ -91,13 +48,14 @@ const DreamsArchitecture = () => {
               Dreams Architecture
             </span>
           </motion.h1>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto"
           >
-            The <span className="text-red-600 font-semibold">Earn & Share Program</span> by BusRank is more than rewards — it’s a blueprint for how dreams build mobility, freedom, and opportunity across Africa.
+            The <span className="text-red-600 font-semibold">Earn & Share Program</span> by BusRank is a movement empowering dreamers across Africa to build mobility, opportunity, and freedom.
           </motion.p>
 
           <motion.div
@@ -125,82 +83,103 @@ const DreamsArchitecture = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-24 bg-black/30 backdrop-blur-lg border-t border-gray-800">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+      {/* Register With Us Section */}
+      <section className="py-24 bg-black text-white border-t border-gray-800">
+        <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold mb-6 text-white"
+            className="text-4xl font-bold mb-4"
           >
-            Redefining Mobility, One Dream at a Time
+            Register With Us
           </motion.h2>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            BusRank’s <span className="text-red-600 font-medium">Earn & Share</span> program lets users earn rewards for helping expand Africa’s smartest mobility network.
+          <p className="text-lg text-gray-400 mb-12">
+            Tell us about you and your mission. This is your chance to join our network and be part of a movement transforming Africa’s mobility landscape.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="p-6 bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-lg"
-                >
-                  <Icon className="w-10 h-10 text-red-600 mx-auto mb-4" />
-                  <div className="text-2xl font-bold text-white">{stat.value}</div>
-                  <div className="text-sm text-gray-400">{stat.label}</div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+          <form className="space-y-6 text-left bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl shadow-xl">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label className="block mb-2 text-sm font-semibold">First Name *</label>
+                <input
+                  type="text"
+                  placeholder="Your first name"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-xl text-white focus:border-red-600 focus:ring-1 focus:ring-red-600 outline-none"
+                  required
+                />
+              </div>
 
-      {/* Values Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-900 to-gray-950">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              The Architecture of Dreams
-            </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Every great change starts with belief — and the Earn & Share program rewards those who dare to dream and act.
-            </p>
-          </motion.div>
+              <div>
+                <label className="block mb-2 text-sm font-semibold">Email Address *</label>
+                <input
+                  type="email"
+                  placeholder="you@example.com"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-xl text-white focus:border-red-600 focus:ring-1 focus:ring-red-600 outline-none"
+                  required
+                />
+              </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => {
-              const Icon = value.icon;
-              return (
-                <motion.div
-                  key={value.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -10 }}
-                  className="group bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300"
-                >
-                  <div
-                    className={`w-16 h-16 mb-6 rounded-xl bg-gradient-to-r ${value.color} flex items-center justify-center group-hover:scale-110 transition-transform`}
-                  >
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
-                  <p className="text-gray-400">{value.description}</p>
-                </motion.div>
-              );
-            })}
-          </div>
+              <div>
+                <label className="block mb-2 text-sm font-semibold">Phone Number *</label>
+                <div className="flex items-center">
+                  <span className="px-3 py-3 bg-gray-800 border border-gray-700 rounded-l-xl text-gray-400">+27</span>
+                  <input
+                    type="tel"
+                    placeholder="Your phone number"
+                    className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-r-xl text-white focus:border-red-600 focus:ring-1 focus:ring-red-600 outline-none"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block mb-2 text-sm font-semibold">Upload ID Copy *</label>
+                <input
+                  type="file"
+                  accept=".jpg,.png,.pdf"
+                  className="w-full text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-red-800 file:text-white hover:file:bg-red-700"
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block mb-2 text-sm font-semibold">
+                Upload Supporting Docs (if applicable)
+              </label>
+              <div className="border-2 border-dashed border-gray-700 rounded-xl p-6 text-center hover:border-red-600 transition">
+                <Upload className="w-10 h-10 mx-auto mb-2 text-gray-400" />
+                <p className="text-sm text-gray-400 mb-2">
+                  Drag and Drop (or) Choose Files
+                </p>
+                <input type="file" multiple accept=".jpg,.png,.pdf" className="hidden" />
+                <p className="text-xs text-gray-500">
+                  JPG, PNG & PDF files only. Max 3MB each.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <label className="block mb-2 text-sm font-semibold">Message</label>
+              <textarea
+                maxLength={500}
+                placeholder="Tell us about your mission or goal..."
+                className="w-full h-32 px-4 py-3 bg-gray-900 border border-gray-700 rounded-xl text-white focus:border-red-600 focus:ring-1 focus:ring-red-600 outline-none resize-none"
+              />
+              <p className="text-sm text-gray-500 text-right mt-1">0 / 500</p>
+            </div>
+
+            <div className="text-center">
+              <Button
+                type="submit"
+                size="lg"
+                className="bg-gradient-to-r from-red-900 via-red-800 to-red-600 text-white font-semibold hover:opacity-90 px-8 py-4"
+              >
+                Apply Now
+              </Button>
+            </div>
+          </form>
         </div>
       </section>
 
