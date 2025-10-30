@@ -8,8 +8,8 @@ const HeroSection = () => {
   const router = useRouter();
 
   const calculateTimeLeft = () => {
-    // ✅ updated to 30 October 2025
-    const targetDate = new Date('2025-10-30T23:59:59');
+    // ✅ updated to 31 October 2025
+    const targetDate = new Date('2025-10-31T23:59:59');
     const now = new Date().getTime();
     const diff = targetDate.getTime() - now;
 
@@ -66,7 +66,7 @@ const HeroSection = () => {
           <div className="bg-gradient-to-r from-red-600 to-red-500 text-white rounded-2xl p-6 shadow-xl mb-6">
             <h2 className="text-2xl font-bold mb-2">⏳ Launching Soon</h2>
             <p className="mb-4">
-              Mark your calendars: <b>30 October 2025</b>
+              Mark your calendars: <b>31 October 2025</b>
             </p>
 
             <div className="flex justify-center md:justify-start gap-4 mb-6">
@@ -134,3 +134,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
