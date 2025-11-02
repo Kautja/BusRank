@@ -8,10 +8,9 @@ const HeroSection = () => {
   const router = useRouter();
 
   const calculateTimeLeft = () => {
-    // ✅ updated to 31 October 2025
-    const targetDate = new Date('2025-11-3T23:59:59');
-    const now = new Date().getTime();
-    const diff = targetDate.getTime() - now;
+    const targetDate = new Date('2025-11-03T23:59:59'); // ✅ Correct target date
+    const now = new Date();
+    const diff = targetDate - now;
 
     if (diff > 0) {
       return {
@@ -21,7 +20,6 @@ const HeroSection = () => {
         seconds: Math.floor((diff / 1000) % 60),
       };
     } else {
-      // When time runs out
       return { days: 0, hours: 0, minutes: 0, seconds: 0 };
     }
   };
@@ -39,16 +37,17 @@ const HeroSection = () => {
 
   const handleWaitlist = (e) => {
     e.preventDefault();
-    router.push(`/contact?email=${encodeURIComponent(email)}`);
+    if (email) {
+      router.push(`/contact?email=${encodeURIComponent(email)}`);
+    }
   };
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-black via-red-900 to-black overflow-hidden py-20">
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
 
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto w-full px-6">
-        {/* ---------- LEFT ---------- */}
+        {/* LEFT */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -73,7 +72,7 @@ const HeroSection = () => {
               {['days', 'hours', 'minutes', 'seconds'].map((unit) => (
                 <div key={unit} className="flex flex-col items-center">
                   <div className="text-2xl font-bold bg-white text-red-600 rounded-xl w-14 h-14 flex items-center justify-center">
-                    {String(timeLeft[unit] ?? 0).padStart(2, '0')}
+                    {String(timeLeft[unit]).padStart(2, '0')}
                   </div>
                   <span className="uppercase text-xs mt-1">{unit}</span>
                 </div>
@@ -102,31 +101,22 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
-        {/* ---------- RIGHT: ONBOARDING IMAGES ---------- */}
+        {/* RIGHT */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
           className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-10 md:mt-0"
         >
-          <img
-            src="/images/Onboarding1.png"
-            alt="Onboarding Screen 1"
-            className="w-48 md:w-56 rounded-2xl shadow-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
-            style={{ aspectRatio: '9/19.5', objectFit: 'cover' }}
-          />
-          <img
-            src="/images/Onboarding2.png"
-            alt="Onboarding Screen 2"
-            className="w-48 md:w-56 rounded-2xl shadow-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
-            style={{ aspectRatio: '9/19.5', objectFit: 'cover' }}
-          />
-          <img
-            src="/images/Onboarding3.png"
-            alt="Onboarding Screen 3"
-            className="w-48 md:w-56 rounded-2xl shadow-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
-            style={{ aspectRatio: '9/19.5', objectFit: 'cover' }}
-          />
+          {['Onboarding1', 'Onboarding2', 'Onboarding3'].map((img, idx) => (
+            <img
+              key={idx}
+              src={`/images/${img}.png`}
+              alt={`Onboarding Screen ${idx + 1}`}
+              className="w-48 md:w-56 rounded-2xl shadow-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
+              style={{ aspectRatio: '9/19.5', objectFit: 'cover' }}
+            />
+          ))}
         </motion.div>
       </div>
     </section>
@@ -134,4 +124,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
