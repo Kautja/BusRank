@@ -1,14 +1,15 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 
 const HeroSection = () => {
   const router = useRouter();
 
+  // Calculate remaining time
   const calculateTimeLeft = () => {
-    const targetDate = new Date('2025-11-03T23:59:59'); // ✅ Correct target date
+    const targetDate = new Date('2025-11-05T23:59:59'); // ✅ Target: 5 November 2025
     const now = new Date();
     const diff = targetDate - now;
 
@@ -27,11 +28,11 @@ const HeroSection = () => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   const [email, setEmail] = useState('');
 
+  // Update every second
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
-
     return () => clearInterval(timer);
   }, []);
 
@@ -61,18 +62,29 @@ const HeroSection = () => {
             BusRank is launching soon 🚀. Join the movement and be among the first to experience smarter, faster, and more reliable mobility.
           </p>
 
-          {/* Countdown */}
+          {/* Countdown Timer */}
           <div className="bg-gradient-to-r from-red-600 to-red-500 text-white rounded-2xl p-6 shadow-xl mb-6">
             <h2 className="text-2xl font-bold mb-2">⏳ Launching Soon</h2>
             <p className="mb-4">
-              Mark your calendars: <b>3 November 2025</b>
+              Mark your calendars: <b>5 November 2025</b>
             </p>
 
             <div className="flex justify-center md:justify-start gap-4 mb-6">
               {['days', 'hours', 'minutes', 'seconds'].map((unit) => (
                 <div key={unit} className="flex flex-col items-center">
-                  <div className="text-2xl font-bold bg-white text-red-600 rounded-xl w-14 h-14 flex items-center justify-center">
-                    {String(timeLeft[unit]).padStart(2, '0')}
+                  <div className="relative w-14 h-14 bg-white text-red-600 rounded-xl flex items-center justify-center overflow-hidden">
+                    <AnimatePresence mode="popLayout">
+                      <motion.span
+                        key={timeLeft[unit]}
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -20, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="text-2xl font-bold absolute"
+                      >
+                        {String(timeLeft[unit]).padStart(2, '0')}
+                      </motion.span>
+                    </AnimatePresence>
                   </div>
                   <span className="uppercase text-xs mt-1">{unit}</span>
                 </div>
@@ -101,7 +113,7 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
-        {/* RIGHT */}
+        {/* RIGHT IMAGES */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -109,11 +121,13 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-10 md:mt-0"
         >
           {['Onboarding1', 'Onboarding2', 'Onboarding3'].map((img, idx) => (
-            <img
+            <motion.img
               key={idx}
               src={`/images/${img}.png`}
               alt={`Onboarding Screen ${idx + 1}`}
-              className="w-48 md:w-56 rounded-2xl shadow-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
+              className="w-48 md:w-56 rounded-2xl shadow-2xl border border-white/10"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: 'spring', stiffness: 300 }}
               style={{ aspectRatio: '9/19.5', objectFit: 'cover' }}
             />
           ))}
