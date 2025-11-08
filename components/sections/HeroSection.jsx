@@ -9,7 +9,7 @@ const HeroSection = () => {
 
   // Calculate remaining time
   const calculateTimeLeft = () => {
-    const targetDate = new Date('2025-11-10T23:59:59'); // ✅ Target: 10 November 2025
+    const targetDate = new Date('2026-01-23T23:59:59'); // ✅ Target: 10 November 2025
     const now = new Date();
     const diff = targetDate - now;
 
