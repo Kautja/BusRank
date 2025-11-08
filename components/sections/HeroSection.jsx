@@ -66,7 +66,7 @@ const HeroSection = () => {
           <div className="bg-gradient-to-r from-red-600 to-red-500 text-white rounded-2xl p-6 shadow-xl mb-6">
             <h2 className="text-2xl font-bold mb-2">⏳ Launching Soon</h2>
             <p className="mb-4">
-              Mark your calendars: <b>10 November 2025</b>
+              Mark your calendars: <b>23 January 2025</b>
             </p>
 
             <div className="flex justify-center md:justify-start gap-4 mb-6">
