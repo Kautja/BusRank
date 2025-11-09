@@ -40,7 +40,7 @@ const countries = [
   },
   {
     id: 5,
-    name: 'Karachi',
+    name: 'Lahore',
     country: 'Pakistan',
     population: '16M+',
     rating: 4.7,
